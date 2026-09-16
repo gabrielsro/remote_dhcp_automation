@@ -1,0 +1,99 @@
+name: remote_dhcp_automation
+
+topology:
+  nodes:
+    dhcp-server:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      binds:
+        - ./configs/dnsmasq.conf:/etc/dnsmasq.conf
+      exec:
+        - ip addr add 10.1.0.2/24 dev eth1
+        - ip route del default
+        - ip route add default via 10.1.0.3 dev eth1
+        - dnsmasq --conf-file=/etc/dnsmasq.conf
+    sw-distribution-1:
+      kind: arista_ceos
+      image: ceos:4.32.0F
+      startup-config: ./configs/sw-distribution-1/startup-config
+    sw-access-1:
+      kind: arista_ceos
+      image: ceos:4.32.0F
+      startup-config: ./configs/sw-access-1/startup-config
+    sw-access-2:
+      kind: arista_ceos
+      image: ceos:4.32.0F
+      startup-config: ./configs/sw-access-2/startup-config
+    sw-access-3:
+      kind: arista_ceos
+      image: ceos:4.32.0F
+      startup-config: ./configs/sw-access-3/startup-config
+    client-01:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip route del default dev eth0
+        - udhcpc -b -i eth1
+    client-02:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip route del default dev eth0
+        - udhcpc -b -i eth1
+    client-03:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip route del default dev eth0
+        - udhcpc -b -i eth1
+    client-04:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip route del default dev eth0
+        - udhcpc -b -i eth1
+    client-05:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip route del default dev eth0
+        - udhcpc -b -i eth1
+    client-06:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip route del default dev eth0
+        - udhcpc -b -i eth1
+    client-07:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip route del default dev eth0
+        - udhcpc -b -i eth1
+    client-08:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip route del default dev eth0
+        - udhcpc -b -i eth1
+    client-09:
+      kind: linux
+      image: ghcr.io/srl-labs/network-multitool:latest
+      exec:
+        - ip route del default dev eth0
+        - udhcpc -b -i eth1
+
+  links:
+    - endpoints: [ "client-01:eth1", "sw-access-1:eth2" ]
+    - endpoints: [ "client-02:eth1", "sw-access-1:eth1" ]
+    - endpoints: [ "client-03:eth1", "sw-access-1:eth3" ]
+    - endpoints: [ "client-04:eth1", "sw-access-2:eth1" ]
+    - endpoints: [ "client-05:eth1", "sw-access-2:eth2" ]
+    - endpoints: [ "client-06:eth1", "sw-access-2:eth3" ]
+    - endpoints: [ "client-07:eth1", "sw-access-3:eth1" ]
+    - endpoints: [ "client-08:eth1", "sw-access-3:eth2" ]
+    - endpoints: [ "client-09:eth1", "sw-access-3:eth3" ]
+    - endpoints: [ "sw-access-1:eth4", "sw-distribution-1:eth1" ]
+    - endpoints: [ "sw-access-2:eth4", "sw-distribution-1:eth2" ]
+    - endpoints: [ "sw-access-3:eth4", "sw-distribution-1:eth3" ]
+    - endpoints: [ "sw-distribution-1:eth4", "dhcp-server:eth1" ]

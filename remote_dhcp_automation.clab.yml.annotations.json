@@ -1,0 +1,232 @@
+{
+  "freeTextAnnotations": [
+    {
+      "id": "freeText_1789516943989",
+      "text": ".2",
+      "position": {
+        "x": 242.2094453321146,
+        "y": 192.7068216287494
+      },
+      "fontSize": 13,
+      "fontColor": "#2ec27e",
+      "fontWeight": "bold",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789516988940",
+      "text": ".3",
+      "position": {
+        "x": 323.3165226834462,
+        "y": 277.3130244122925
+      },
+      "fontSize": 13,
+      "fontColor": "#2ec27e",
+      "fontWeight": "bold",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789517010291",
+      "text": ".4",
+      "position": {
+        "x": 200.5952048048033,
+        "y": 390.1345254843781
+      },
+      "fontSize": 13,
+      "fontColor": "#2ec27e",
+      "fontWeight": "bold",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789517019441",
+      "text": ".5",
+      "position": {
+        "x": 424.2013052039283,
+        "y": 408.24728589420346
+      },
+      "fontSize": 13,
+      "fontColor": "#2ec27e",
+      "fontWeight": "bold",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789517027574",
+      "text": ".6",
+      "position": {
+        "x": 433.481634076444,
+        "y": 238.41539239307556
+      },
+      "fontSize": 13,
+      "fontColor": "#2ec27e",
+      "fontWeight": "bold",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    },
+    {
+      "id": "freeText_1789517623070",
+      "text": "Management VLAN\nVLAN ID: 99\nSubnet: 10.1.0.0/24",
+      "position": {
+        "x": 84.4278606965174,
+        "y": 260.0497512437811
+      },
+      "fontSize": 13,
+      "fontColor": "#ffffff",
+      "fontWeight": "bold",
+      "fontStyle": "normal",
+      "textDecoration": "none",
+      "textAlign": "left",
+      "fontFamily": "Arial"
+    }
+  ],
+  "freeShapeAnnotations": [
+    {
+      "id": "freeShape_1789517099892",
+      "shapeType": "circle",
+      "position": {
+        "x": 171.01609618724873,
+        "y": 157.03296129360638
+      },
+      "width": 321,
+      "height": 321,
+      "fillColor": "#7f7f7f",
+      "fillOpacity": 0,
+      "borderColor": "#cccccc",
+      "borderWidth": 1,
+      "borderStyle": "solid",
+      "rotation": 0,
+      "zIndex": -1
+    }
+  ],
+  "trafficRateAnnotations": [],
+  "groupStyleAnnotations": [],
+  "networkNodeAnnotations": [],
+  "nodeAnnotations": [
+    {
+      "id": "dhcp-server",
+      "position": {
+        "x": 200,
+        "y": 180
+      },
+      "icon": "server"
+    },
+    {
+      "id": "sw-distribution-1",
+      "position": {
+        "x": 320,
+        "y": 300
+      }
+    },
+    {
+      "id": "sw-access-1",
+      "position": {
+        "x": 180,
+        "y": 420
+      },
+      "icon": "switch"
+    },
+    {
+      "id": "sw-access-2",
+      "position": {
+        "x": 420,
+        "y": 440
+      },
+      "icon": "switch"
+    },
+    {
+      "id": "sw-access-3",
+      "position": {
+        "x": 460,
+        "y": 220
+      },
+      "icon": "switch"
+    },
+    {
+      "id": "client-01",
+      "position": {
+        "x": 100,
+        "y": 520
+      },
+      "icon": "client"
+    },
+    {
+      "id": "client-02",
+      "position": {
+        "x": 180,
+        "y": 520
+      },
+      "icon": "client"
+    },
+    {
+      "id": "client-03",
+      "position": {
+        "x": 260,
+        "y": 520
+      },
+      "icon": "client"
+    },
+    {
+      "id": "client-04",
+      "position": {
+        "x": 440,
+        "y": 520
+      },
+      "icon": "client"
+    },
+    {
+      "id": "client-05",
+      "position": {
+        "x": 360,
+        "y": 520
+      },
+      "icon": "client"
+    },
+    {
+      "id": "client-06",
+      "position": {
+        "x": 520,
+        "y": 520
+      },
+      "icon": "client"
+    },
+    {
+      "id": "client-07",
+      "position": {
+        "x": 580,
+        "y": 320
+      },
+      "icon": "client"
+    },
+    {
+      "id": "client-08",
+      "position": {
+        "x": 580,
+        "y": 240
+      },
+      "icon": "client"
+    },
+    {
+      "id": "client-09",
+      "position": {
+        "x": 580,
+        "y": 160
+      },
+      "icon": "client"
+    }
+  ],
+  "edgeAnnotations": [],
+  "aliasEndpointAnnotations": [],
+  "viewerSettings": {}
+}
