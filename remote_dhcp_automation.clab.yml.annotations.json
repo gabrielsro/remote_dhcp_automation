@@ -1,21 +1,6 @@
 {
   "freeTextAnnotations": [
     {
-      "id": "freeText_1789516943989",
-      "text": ".2",
-      "position": {
-        "x": 242.2094453321146,
-        "y": 192.7068216287494
-      },
-      "fontSize": 13,
-      "fontColor": "#2ec27e",
-      "fontWeight": "bold",
-      "fontStyle": "normal",
-      "textDecoration": "none",
-      "textAlign": "left",
-      "fontFamily": "Arial"
-    },
-    {
       "id": "freeText_1789516988940",
       "text": ".3",
       "position": {
@@ -69,21 +54,6 @@
       },
       "fontSize": 13,
       "fontColor": "#2ec27e",
-      "fontWeight": "bold",
-      "fontStyle": "normal",
-      "textDecoration": "none",
-      "textAlign": "left",
-      "fontFamily": "Arial"
-    },
-    {
-      "id": "freeText_1789517623070",
-      "text": "Management VLAN\nVLAN ID: 99\nSubnet: 10.1.0.0/24",
-      "position": {
-        "x": 84.4278606965174,
-        "y": 260.0497512437811
-      },
-      "fontSize": 13,
-      "fontColor": "#ffffff",
       "fontWeight": "bold",
       "fontStyle": "normal",
       "textDecoration": "none",

@@ -15,19 +15,19 @@ topology:
     sw-distribution-1:
       kind: arista_ceos
       image: ceos:4.32.0F
-      startup-config: ./configs/sw-distribution-1/startup-config
+      #startup-config: ./configs/sw-distribution-1/startup-config
     sw-access-1:
       kind: arista_ceos
       image: ceos:4.32.0F
-      startup-config: ./configs/sw-access-1/startup-config
+      #startup-config: ./configs/sw-access-1/startup-config
     sw-access-2:
       kind: arista_ceos
       image: ceos:4.32.0F
-      startup-config: ./configs/sw-access-2/startup-config
+      #startup-config: ./configs/sw-access-2/startup-config
     sw-access-3:
       kind: arista_ceos
       image: ceos:4.32.0F
-      startup-config: ./configs/sw-access-3/startup-config
+      #startup-config: ./configs/sw-access-3/startup-config
     client-01:
       kind: linux
       image: ghcr.io/srl-labs/network-multitool:latest
