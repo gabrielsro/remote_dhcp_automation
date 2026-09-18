@@ -1,0 +1,19 @@
+- name: Distribution switch specifics
+  hosts: clab-remote_dhcp_automation-sw-distribution-1
+  gather_facts: no
+  tasks:
+    - name: Configure SVIs
+      arista.eos.eos_l3_interfaces:
+        config:
+          - name: "{{ item.name }}"
+            ipv4:
+              - address: "{{ item.ip_address }}"
+        state: merged
+      loop: "{{ svi_interfaces }}"
+
+    - name: Apply IP helper address to all SVIs
+      arista.eos.eos_config:
+        lines:
+          - ip helper-address {{ dhcp_server }} 
+        parents: interface {{ item.name }}
+      loop: "{{ svi_interfaces }}"
