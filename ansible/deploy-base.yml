@@ -1,0 +1,29 @@
+---
+- name: Global switch configuration
+  hosts: arista_ceos
+  gather_facts: no
+  tasks:
+    - name: Create global VLAN database
+      arista.eos.eos_vlans:
+        config:
+          - vlan_id: 10
+            name: Sales
+          - vlan_id: 20
+            name: Cameras
+          - vlan_id: 30
+            name: Accounting
+          - vlan_id: 40
+            name: Guests
+        state: merged
+
+    - name: Enable global IP routing
+      arista.eos.eos_config:
+        lines:
+          - ip routing
+
+    - name: Set MOTD login banner
+      arista.eos.eos_banner:
+        banner: motd
+        text: |
+          *** AUTHORIZED ACCESS ONLY - MANAGED VIA ANSIBLE IaC ***
+        state: present
