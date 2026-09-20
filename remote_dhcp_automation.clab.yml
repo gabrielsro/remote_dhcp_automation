@@ -5,13 +5,10 @@ topology:
     dhcp-server:
       kind: linux
       image: ghcr.io/srl-labs/network-multitool:latest
-      binds:
-        - ./configs/dnsmasq.conf:/etc/dnsmasq.conf
       exec:
         - ip addr add 10.1.0.2/24 dev eth1
         - ip route del default
         - ip route add default via 10.1.0.3 dev eth1
-        - dnsmasq --conf-file=/etc/dnsmasq.conf
     sw-distribution-1:
       kind: arista_ceos
       image: ceos:4.32.0F

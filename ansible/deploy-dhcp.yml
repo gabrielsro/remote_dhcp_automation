@@ -1,0 +1,22 @@
+---
+- name: Deploy DHCP server configuration
+  hosts: clab-remote_dhcp_automation-dhcp-server
+  gather_facts: no
+  become: true
+  tasks:
+    - name: Check if variables are loading
+      ansible.builtin.debug:
+        var: dhcp_scopes
+
+    - name: Ensure dnsmasq is installed
+      community.general.apk:
+        name: dnsmasq
+        state: present
+
+    - name: Render and push the dnsmasq.conf template
+      ansible.builtin.template:
+        src: templates/dnsmasq.conf.j2
+        dest: /etc/dnsmasq.conf
+
+    - name: Start or restart dnsmasq service
+      ansible.builtin.shell: "killall dnsmasq || true && dnsmasq"
