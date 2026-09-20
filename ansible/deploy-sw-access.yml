@@ -1,6 +1,6 @@
 ---
 - name: Access layer switch port configuration
-  hosts: sw-access
+  hosts: sw_access
   gather_facts: no
   tasks:
     - name: Configure trunk interfaces

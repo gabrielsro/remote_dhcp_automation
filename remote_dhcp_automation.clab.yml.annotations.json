@@ -1,24 +1,6 @@
 {
   "freeTextAnnotations": [],
-  "freeShapeAnnotations": [
-    {
-      "id": "freeShape_1789517099892",
-      "shapeType": "circle",
-      "position": {
-        "x": 171.01609618724873,
-        "y": 157.03296129360638
-      },
-      "width": 321,
-      "height": 321,
-      "fillColor": "#7f7f7f",
-      "fillOpacity": 0,
-      "borderColor": "#cccccc",
-      "borderWidth": 1,
-      "borderStyle": "solid",
-      "rotation": 0,
-      "zIndex": -1
-    }
-  ],
+  "freeShapeAnnotations": [],
   "trafficRateAnnotations": [],
   "groupStyleAnnotations": [],
   "networkNodeAnnotations": [],

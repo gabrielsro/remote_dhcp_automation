@@ -17,3 +17,22 @@
           - ip helper-address {{ dhcp_server }} 
         parents: interface {{ item.name }}
       loop: "{{ svi_interfaces }}"
+
+    - name: Create and apply management interface
+      arista.eos.eos_l2_interfaces:
+        config:
+          - name: "{{ item.name }}"
+            access:
+              vlan: "{{ item.vlan }}"
+        state: merged
+      loop: "{{ access_ports }}"
+
+    - name: Configure trunk interfaces
+      arista.eos.eos_l2_interfaces:
+        config:
+          - name: "{{ item.name }}"
+            mode: trunk
+            trunk:
+              trunk_allowed_vlans: "{{ item.allowed_vlans}}"
+        state: merged
+      loop: "{{ trunk_ports }}"

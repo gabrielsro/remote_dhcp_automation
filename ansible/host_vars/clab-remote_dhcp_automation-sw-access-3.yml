@@ -1,7 +1,7 @@
 ---
 access_ports:
   - name: Ethernet1
-    vlan: 40
+    vlan: 20
   - name: Ethernet2
     vlan: 40
   - name: Ethernet3
@@ -10,4 +10,5 @@ trunk_ports:
   - name: Ethernet4
     allowed_vlans:
       - "10"
+      - "20"
       - "40"

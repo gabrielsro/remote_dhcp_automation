@@ -6,6 +6,8 @@
     - name: Create global VLAN database
       arista.eos.eos_vlans:
         config:
+          - vlan_id: 99 
+            name: Management
           - vlan_id: 10
             name: Sales
           - vlan_id: 20
