@@ -1,0 +1,9 @@
+sw_distribution:
+  hosts:
+    clab-remote_dhcp_automation-sw-distribution-1:
+
+sw_access:
+  hosts:
+    clab-remote_dhcp_automation-sw-access-1:
+    clab-remote_dhcp_automation-sw-access-2:
+    clab-remote_dhcp_automation-sw-access-3:
