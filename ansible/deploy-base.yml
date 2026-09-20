@@ -22,10 +22,3 @@
       arista.eos.eos_config:
         lines:
           - ip routing
-
-    - name: Set MOTD login banner
-      arista.eos.eos_banner:
-        banner: motd
-        text: |
-          *** AUTHORIZED ACCESS ONLY - MANAGED VIA ANSIBLE IaC ***
-        state: present

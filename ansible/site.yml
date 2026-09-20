@@ -1,0 +1,15 @@
+---
+# site.yml - Master orchestrator for 'Remote DHCP Automation' topology
+
+# 1. Base configuration - Applied to all switches. Contains VLAN data
+- import_playbook: deploy-base.yml
+
+# 2. Distribution switch configuration - Applied to distribution switch. Sets up trunks, SVIs, helper address and management VLAN access port for DHCP server
+- import_playbook: deploy-sw-distribution-1.yml
+
+# 3. DHCP server configuration - Applies DHCP configuration to Alpine Linux node. Installs and starts dnsmasq and creates dnsmasq.conf from jinja2 template 
+- import_playbook: deploy-dhcp.yml
+
+# 4. Access switch configuration - Applied to access switches. Configures uplink trunks and access port VLANs
+- import_playbook: deploy-sw-access.yml
+
