@@ -1,0 +1,14 @@
+---
+access_ports:
+  - name: Ethernet1
+    vlan: 10
+  - name: Ethernet2
+    vlan: 20
+  - name: Ethernet3
+    vlan: 30
+trunk_ports:
+  - name: Ethernet4
+    allowed_vlans:
+      - "10"
+      - "20"
+      - "30"

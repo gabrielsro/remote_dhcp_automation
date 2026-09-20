@@ -1,0 +1,23 @@
+---
+- name: Access layer switch port configuration
+  hosts: sw-access
+  gather_facts: no
+  tasks:
+    - name: Configure trunk interfaces
+      arista.eos.eos_l2_interfaces:
+        config:
+          - name: "{{ item.name }}"
+            mode: trunk
+            trunk:
+              trunk_allowed_vlans: "{{ item.allowed_vlans }}"
+        state: merged
+      loop: "{{ trunk_ports }}"
+
+    - name: Assign access ports to vlans
+      arista.eos.eos_l2_interfaces:
+        config:
+          - name: "{{ item.name }}"
+            access:
+              vlan: "{{ item.vlan }}"
+        state: merged
+      loop: "{{ access_ports }}"
