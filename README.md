@@ -2,7 +2,7 @@
 
 This project demonstrates a fully automated, infrastructure-as-code (IaC) deployment of a campus network topology.
 
-Using **Containerlab**, the bare-bones infrastructure is rapidly deployed, comprised of Arista cEOS switches and using Alpine Linux for clients and DHCP server. **Ansible** playbooks are then utilized to programmatically configure VLANs, trunks, SVIs, and DHCP settings across network devices, enabling the client endpoints to successfully lease IP addresses from a remote DHCP server.
+The bare-bones infrastructure, comprised of Arista cEOS switches and Alpine Linux DHCP server and clients is deployed quickly using **Containerlab**. Network devices are then configured via **Ansible** playbooks (VLANs, trunks, SVIs, DHCP settings), allowing client endpoints to successfully lease IP addresses from the remote DHCP server.
 
 ## Network Topology
 
@@ -13,6 +13,15 @@ Using **Containerlab**, the bare-bones infrastructure is rapidly deployed, compr
 * **Distribution Layer:** Arista cEOS switch functioning as the distribution boundary. It hosts the Switch Virtual Interfaces (SVIs) for all client VLANs and utilizes IP helper addresses to relay DHCP traffic to the DHCP server.
 * **Access Layer:** Three Arista cEOS switches connected to the distribution switch via 802.1Q trunks.
 * **Clients:** Alpine Linux containers connected to access switchports on their respective VLANs. 
+
+## Initial IP and VLAN Schema
+
+| VLAN ID | Name | Subnet|
+| :--- | :--- | :--- |
+| **10** | Sales | 10.1.1.0/24 |
+| **20** | Cameras | 10.1.2.0/24 |
+| **30** | Accounting | 10.1.3.0/24 |
+| **40** | Guests | 10.1.4.0/24 |
 
 ## Technologies & Tools
 * **Docker:** Container runtime.
@@ -54,9 +63,10 @@ Using **Containerlab**, the bare-bones infrastructure is rapidly deployed, compr
     ```bash
     docker exec -it clab-remote_dhcp_automation-client01 ip addr
     ```
-    *Note: Clients go from clab-remote_dhcp_automation-client01 to clab-remote_dhcp_automation-09*
+    *Note: Clients go from clab-remote_dhcp_automation-client01 to clab-remote_dhcp_automation-client09*
 
 ### Cleanup
+
     To tear down the lab and remove all containers:
     ```bash
     sudo containerlab destroy -t remote_dhcp_automation --cleanup
