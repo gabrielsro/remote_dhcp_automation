@@ -32,27 +32,32 @@ Using **Containerlab**, the bare-bones infrastructure is rapidly deployed, compr
 
 1. **Clone the repository:**
     ```bash
-    git clone [https://github.com/gabrielsro/remote_dhcp_automation.git](https://github.com/gabrielsro/remote_dhcp_automation.git)
+    git clone https://github.com/gabrielsro/remote_dhcp_automation.git
     cd remote_dhcp_automation
+    ```
 
 2. **Deploy the Containerlab topology:**
     ```bash
     sudo containerlab deploy -t remote_dhcp_automation.clab.yml
+    ```
 
     *Note: Containerlab will automatically generate the management network on the docker0 subnet to allow Ansible SSH access.*
 
 3. **Run the Ansible Playbook:**
     ```bash
     ansible-playbook site.yml
+    ```
 
 4. **Verify DHCP Leases:**
+
     Connect to one of the Alpine clients and verify it received an IP address from its respective VLAN scope:
     ```bash
     docker exec -it clab-remote_dhcp_automation-client01 ip addr
-
-    *Note: Clients go from clab-remote_dhcp_automation-client01 to clab-remote_dhcp_automation-09
+    ```
+    *Note: Clients go from clab-remote_dhcp_automation-client01 to clab-remote_dhcp_automation-09*
 
 ### Cleanup
     To tear down the lab and remove all containers:
-        ```bash
-        sudo containerlab destroy -t remote_dhcp_automation --cleanup
+    ```bash
+    sudo containerlab destroy -t remote_dhcp_automation --cleanup
+    ```
