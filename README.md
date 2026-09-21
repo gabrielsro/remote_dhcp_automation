@@ -54,5 +54,5 @@ Using **Containerlab**, the bare-bones infrastructure is rapidly deployed, compr
 
 ### Cleanup
     To tear down the lab and remove all containers:
-    ```bash
-    sudo containerlab destroy -t remote_dhcp_automation --cleanup
+        ```bash
+        sudo containerlab destroy -t remote_dhcp_automation --cleanup
