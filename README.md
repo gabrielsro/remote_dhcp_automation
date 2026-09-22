@@ -70,6 +70,4 @@ The bare-bones infrastructure, comprised of Arista cEOS switches and Alpine Linu
 
     To tear down the lab and remove all containers:
 
-    ```bash
-    sudo containerlab destroy -t remote_dhcp_automation --cleanup
-    ```
+    `sudo containerlab destroy -t remote_dhcp_automation --cleanup`
