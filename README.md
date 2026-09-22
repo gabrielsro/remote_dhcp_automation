@@ -22,6 +22,7 @@ The bare-bones infrastructure, comprised of Arista cEOS switches and Alpine Linu
 | **20** | Cameras | 10.1.2.0/24 |
 | **30** | Accounting | 10.1.3.0/24 |
 | **40** | Guests | 10.1.4.0/24 |
+| **99** | Management | 10.1.0.0/24 |
 
 ## Technologies & Tools
 * **Docker:** Container runtime.
@@ -50,7 +51,7 @@ The bare-bones infrastructure, comprised of Arista cEOS switches and Alpine Linu
     sudo containerlab deploy -t remote_dhcp_automation.clab.yml
     ```
 
-    *Note: Containerlab will automatically generate the management network on the docker0 subnet to allow Ansible SSH access.*
+    *Note: Containerlab will automatically generate a management network on the docker0 subnet to allow Ansible SSH access.*
 
 3. **Run the Ansible Playbook:**
     ```bash
@@ -68,6 +69,7 @@ The bare-bones infrastructure, comprised of Arista cEOS switches and Alpine Linu
 ### Cleanup
 
     To tear down the lab and remove all containers:
+
     ```bash
     sudo containerlab destroy -t remote_dhcp_automation --cleanup
     ```
