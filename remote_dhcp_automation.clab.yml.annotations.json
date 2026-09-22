@@ -8,15 +8,15 @@
     {
       "id": "dhcp-server",
       "position": {
-        "x": 200,
-        "y": 180
+        "x": 180,
+        "y": 220
       },
       "icon": "server"
     },
     {
       "id": "sw-distribution-1",
       "position": {
-        "x": 320,
+        "x": 300,
         "y": 300
       }
     },
@@ -39,7 +39,7 @@
     {
       "id": "sw-access-3",
       "position": {
-        "x": 460,
+        "x": 420,
         "y": 220
       },
       "icon": "switch"
@@ -95,7 +95,7 @@
     {
       "id": "client-07",
       "position": {
-        "x": 580,
+        "x": 520,
         "y": 320
       },
       "icon": "client"
@@ -103,7 +103,7 @@
     {
       "id": "client-08",
       "position": {
-        "x": 580,
+        "x": 520,
         "y": 240
       },
       "icon": "client"
@@ -111,7 +111,7 @@
     {
       "id": "client-09",
       "position": {
-        "x": 580,
+        "x": 520,
         "y": 160
       },
       "icon": "client"

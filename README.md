@@ -6,7 +6,7 @@ The bare-bones infrastructure, comprised of Arista cEOS switches and Alpine Linu
 
 ## Network Topology
 
-<img src="remote_dhcp_automation.svg" alt="Network topology" width="100%"/>
+<img src="network_topology.svg" alt="Network topology" width="100%"/>
 
 **Topology Details:**
 * **DHCP Server:** Alpine Linux container running `dnsmasq`, residing on the management VLAN.
